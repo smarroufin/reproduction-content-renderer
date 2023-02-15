@@ -8,6 +8,7 @@
       v-show="!preview"
       v-model="body"
       placeholder="Write text..."
+      class="textarea"
     ></textarea>
     <ContentRenderer v-if="preview" :value="previewAst" class="renderer">
       <template #empty>
@@ -41,6 +42,16 @@ watch([preview, body], async () => {
 .container {
   border: solid black 1px;
   padding: 4px;
+}
+.textarea {
+  margin-top: 16px;
+  margin-bottom: 0;
+  width: 100%;
+  border: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  min-height: 76px;
+  background-color: rgba(80, 80, 80, 0.4);
 }
 .renderer {
   min-height: 80px;
